@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Моя страница</title>
+        <meta charset="UTF-8" />
+
+        <style>
+           .experiment{
+             margin-top: 10px;
+             border: 2px dashed blue;
+           }
+           input{
+            font-size: 24px;
+           }
+           div{
+            /*font-size: 36px;*/
+           }
+           
+        </style>
+    </head>
+
+    <body>
+        <div class="experiment" style="border: 1px solid #FF11CC; background-color: aquamarine;">
+         Фамилия: <input type="text" /> <button>Принять</button>
+        </div>
+
+        <div style="display: flex; border: 1px solid green; margin-top: 10px;">
+            <div class="experiment" style="width: 35%; ">
+                Эксперимент
+            </div>
+            <div class="experiment" style="width: 35%; ">
+                Эксперимент 2
+            </div>
+            <divc class="experiment" style="flex-grow: 1; ">
+                Блок 3
+            </div>
+        </div>
+
+        <span style="display: inline;">Тест 1</span>
+        <span style="display: block;">Тест 2</span>
+
+        <div style="position: relative ;">
+            <div class="experiment" style="left: 100px; top: 10px; position: absolute;">Позиционирование</div>
+        </div>
+
+        <div class="experiment" style="left: 100px; top: 10px; position: fixed;">Позиционирование 2</div>
+
+      
+
+
+
+    </body>
+</html>
