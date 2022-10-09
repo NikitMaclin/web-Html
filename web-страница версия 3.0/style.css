@@ -1,0 +1,213 @@
+
+    .box-menu{
+        width: 1440px;
+        height: 100px;
+        left: 0px;
+        z-index: 1; 
+        background: #004C93;
+    }
+
+
+    .box-xos{
+        width: 240px;
+        height: 29px;
+        left: 165px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        z-index: 1;
+
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .menu-strok{
+        position: fixed;
+        top: 44px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #FFFFFF;
+        z-index: 11;
+
+    }
+
+    .zaglav{
+        position: absolute;
+        width: 350px;
+        height: 44px;
+        left: 165px;
+        
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+
+        color: #004C93;
+    }
+
+    .text-zag{
+        position: absolute;
+        width: 515px;
+        height: 58px;
+        left: 165px;
+
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+
+        color: #004C93;
+    }
+
+    .fon{
+        position: absolute;
+        width: 1440px;
+        height: 541px;
+        left: 0px;
+
+        background: #F3FBFF;
+    }
+
+    .blok{
+        box-sizing: border-box;
+        position: absolute;
+        width: 200px;
+        height: 289px;
+
+        border: 1px solid #004C93;
+        border-radius: 4px;
+    }
+
+    .enot{
+        position: absolute;
+        width: 55px;
+        height: 190px;
+        left: 15px;
+        
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 120px;
+        line-height: 160%;
+        
+        color: #004C93;
+    }
+
+    .text-blok{
+        position: absolute;
+        width: 175px;
+        height: 120px;
+        top: 200px;
+        left: 10px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+
+        color: #2E4674;
+    }
+
+    .tablo{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 555px;
+        height: 32px;
+        left: 165px;
+
+        border: 1px solid #000000;
+    }
+
+    .calc-t{
+        position: absolute;
+        width: 170px;
+        height: 22px;
+        left: 165px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+
+        color: #000000;
+    }
+
+    .cnopka{
+        margin-top: 1754px;
+        padding-left: 157px;
+    }
+
+    .cnopka > button{
+        color: #FFFFFF;
+        background: #0288d1;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .cnopka > button:hover{
+        background: blue;
+    }
+
+    .bakfon{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 15;
+    }
+
+    .window{
+        width: 50%;
+        margin: auto;
+        margin-top: 50px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+    }
+
+    .result{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .zakrit{
+        text-align: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .zakrit > button{
+        color: #FFFFFF;
+        background: #0288d1;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .zakrit > button:hover{
+        background: blue;
+    }
