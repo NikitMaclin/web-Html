@@ -130,6 +130,14 @@
         border: 1px solid #000000;
     }
 
+    .sel{
+        padding-top: 15px;
+        padding-bottom: 100px;
+
+        left: 689px;
+        top: 1595px;
+    }
+
     .calc-t{
         position: absolute;
         width: 170px;
@@ -167,6 +175,7 @@
     }
 
     .bakfon{
+        display: block;
         position: fixed;
         left: 0;
         right: 0;
@@ -210,4 +219,8 @@
 
     .zakrit > button:hover{
         background: blue;
+    }
+
+    .hidden{
+        display: none;
     }

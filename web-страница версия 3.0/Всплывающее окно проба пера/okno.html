@@ -4,6 +4,7 @@
 
         <style>
             .maska{
+                display: block;
                 position: fixed;
                 left: 0;
                 top: 0;
@@ -46,11 +47,42 @@
             .knopka > button:hover{
                 background: blue;
             }
+
+            .hidden{
+                display: none;
+            }
         </style>
+
+        <script>
+            function show(){
+                let element_input = document.querySelector(".text-data");
+                let data = element_input.value;
+                
+                console.dir("text-data")// Выведем в отладочную консоль то, что содержится в поле в text-data
+                
+                if(data.trim()) {
+                    let element_result = document.querySelector(".result");
+                    element_result.innerHTML = "Привет, " + data;
+                
+                    let elemet_window = document.querySelector(".maska");// Получили доступ к элкменту окошка 
+                    elemet_window.classList.remove("hidden");// Убрали класс hidden из списка классов этого окошка
+                }
+
+            }
+
+            function hide(){
+                let elemet_window = document.querySelector(".maska");
+                elemet_window.classList.add("hidden");// Добавили класс hidden в список классов этого окошка
+            }
+        </script>
     </head>
 
     <body>
-        <div class="maska">
+        <div onclick="show()">
+            <button>Окошко</button>
+        </div>
+        <input type="text" class="text-data"/>
+        <div class="maska hidden">
             <div class="window">
                 <h2>Результат</h2>
                 <hr />
@@ -58,7 +90,7 @@
                     Основная часть
                 </div>
                 <hr />
-                <div class="knopka">
+                <div class="knopka" onclick="hide()">
                     <button>Закрыть</button>
                 </div>
             </div>

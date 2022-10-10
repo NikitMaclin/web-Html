@@ -6,6 +6,50 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+
+        <script>
+          function show(){
+            let element_window = document.querySelector(".bakfon");
+            element_window.classList.remove("hidden");
+
+            let element_input1 = document.querySelector(".one");
+            let data1 = element_input1.value;
+
+            let element_input = document.querySelector(".deistvie");
+            let data_deis = element_input.value;
+
+            let element_input2 = document.querySelector(".two");
+            let data2 = element_input2.value
+
+            let element_result = document.querySelector(".result");
+
+            if (data1.trim() && data_deis.trim() && data2.trim()) {
+                if (data_deis == "+"){
+                    let resultat = Number(data1) + Number(data2);
+                    element_result.innerHTML = "Вывод = " + resultat;
+                }
+                else if (data_deis == "-"){
+                    let resultat = Number(data1) - Number(data2);
+                    element_result.innerHTML = "Вывод = " + resultat;
+                }
+                else if (data_deis == "*"){
+                    let resultat = Number(data1) * Number(data2);
+                    element_result.innerHTML = "Вывод = " + resultat;
+
+                }
+                else if (data_deis == "/" && data2 !=0){
+                    let resultat = Number(data1) / Number(data2);
+                    element_result.innerHTML = "Вывод = " + resultat;
+                }
+    
+            }
+          }
+            console.dir(data);
+          function hide(){
+            let element_window = document.querySelector(".bakfon");
+            element_window.classList.add("hidden")
+          }
+        </script>
         
     </head>
 
@@ -58,23 +102,32 @@
          <div> 
             <div id="colt" class="zaglav" style="top: 1406px;">Калькулятор</div>
             <div class="calc-t" style="top: 1480px;">Введите первое число:</div>
-            <div class="tablo" style="top: 1507px;"></div>
-            <div class="calc-t" style="top: 1568px;">Выберите операцию:</div>
-            <div class="tablo" style="top: 1595px;"></div>
+                <input class="tablo one" style="top: 1507px;" type="number" />
+            <div class="calc-t" style="top: 1568px;">Выберите операцию:
+                <div class="sel">
+                    <select class="deistvie" style="padding-inline-end: 522px; padding-top: 15px;">
+                        <option>+</option>
+                        <option>-</option>
+                        <option>*</option>
+                        <option>/</option>
+                    </select>
+                </div>
+            </div>
             <div class="calc-t" style="top: 1656px;">Введите второе число:</div>
-            <div class="tablo" style="top: 1683px;"></div>
+                <input class="tablo two" style="top: 1683px;" type="number" />
             <div class="calc-t" style="top: 1480px; left: 849px;">Ваш результат:</div>
             <div class="calc-t" style="top: 1512px; left: 849px;">Расчет не производился</div>
-            <div class="cnopka">
+            <div class="cnopka" onclick="show()">
                 <button>Вычислить</button>
             </div>
-            <div class="bakfon">
+            
+            <div class="bakfon hidden">
                 <div class="window">
                     <h2>Результат</h2>
                     <hr />
                     <div class="result">Здесь должен быть результат, добавлю позже</div>
                     <hr />
-                    <div class="zakrit">
+                    <div class="zakrit" onclick="hide()">
                         <button>Закрыть</button>
                     </div>
                 </div>
