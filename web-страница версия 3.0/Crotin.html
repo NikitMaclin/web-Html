@@ -23,6 +23,10 @@
 
             let element_result = document.querySelector(".result");
 
+            if (data1 == "" || data2 == ""){ 
+                    element_result.innerHTML = "Поля данных пустые - введите в них числа для расчёта!";
+                }
+
             if (data1.trim() && data_deis.trim() && data2.trim()) {
                 if (data_deis == "+"){
                     let resultat = Number(data1) + Number(data2);
@@ -41,8 +45,12 @@
                     let resultat = Number(data1) / Number(data2);
                     element_result.innerHTML = "Вывод = " + resultat;
                 }
-    
+                else if (data1 && data_deis == "/" && data2 == 0){
+                    element_result.innerHTML = "На ноль делить нельзя - введите заново!";
+                }
+                
             }
+
           }
             console.dir(data);
           function hide(){
