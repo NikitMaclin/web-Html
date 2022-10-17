@@ -69,14 +69,17 @@
         color: #004C93;
     }
 
+
     .fon{
         position: absolute;
         width: 1440px;
         height: 541px;
         left: 0px;
-
+    
         background: #F3FBFF;
     }
+    
+
 
     .blok{
         box-sizing: border-box;
@@ -224,3 +227,13 @@
     .hidden{
         display: none;
     }
+
+
+
+  
+    .photo{
+        position: absolute;
+        left: 710px;
+        top: 150px;
+    }
+    
