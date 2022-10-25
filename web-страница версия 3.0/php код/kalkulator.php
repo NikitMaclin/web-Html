@@ -2,9 +2,9 @@
 
     // Калькулятор
 
-    $otvet = "";
     if (isset($_REQUEST ["knop"])){
-        if (isset($_REQUEST ["one"]) && isset($_REQUEST ["oper"]) && isset($_REQUEST["two"])){
+        if ($_REQUEST ["one"]!="" && $_REQUEST ["oper"]!="" && $_REQUEST["two"]!=""){
+
             $okno1 = $_REQUEST ["one"];
             $vvod = $_REQUEST ["oper"];
             $okno2 = $_REQUEST ["two"];
@@ -15,11 +15,9 @@
             if ($vvod == "-"){
                 $otvet = $okno1 - $okno2;
             }
-
             if ($vvod == "*"){
                 $otvet = $okno1 * $okno2;
             }
-
             if ($vvod == "/"){
                 if ($okno2 <> 0){
                     $otvet = $okno1 / $okno2;
@@ -28,11 +26,12 @@
                     $blok = "На ноль делить нельзя, введите другое число";
                 }
             }
-    
         }
+    
         else {
             $error = "Поля пустые, заполните их и повторите операцию";
         }
+        
     }
 
 
@@ -88,7 +87,7 @@
             </div>
         <?php } ?>
 
-        <?php if(!empty($otvet)) { ?>
+        <?php if(isset($otvet)) { ?>
             <div>
                 <span>Ваш результат: </span>
                 <span>
