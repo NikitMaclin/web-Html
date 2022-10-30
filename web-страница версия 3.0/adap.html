@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+        <style>
+
+            .adaptive_blok{
+                color: blue;
+            }
+
+            @media(min-width: 640px){
+                .adaptive_conter{
+                display: flex;
+                width: 100%;
+              }
+
+                .adaptive_blok{
+                    flex-grow: 1;
+                    color: red;
+                }
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="adaptive_conter">
+            <div class="adaptive_blok">БЛОК 1</div>
+            <div class="adaptive_blok">БЛОК 2</div>
+            <div class="adaptive_blok">БЛОК 3</div>
+            <div class="adaptive_blok">БЛОК 4</div>
+            <div class="adaptive_blok">БЛОК 5</div>
+        </div>
+
+
+    </body>
+</html>
