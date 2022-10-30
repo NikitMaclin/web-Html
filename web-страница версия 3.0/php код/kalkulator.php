@@ -1,6 +1,9 @@
 <?php
-
     // Калькулятор
+    $connecti = mysqli_connect("localhost" , "root" , "" , "kalkulator");
+    if (!$connecti){
+        die ("Связь не установлена: " . mysqli_connect_error());
+    }
 
     if (isset($_REQUEST ["knop"])){
         if ($_REQUEST ["one"]!="" && $_REQUEST ["oper"]!="" && $_REQUEST["two"]!=""){
@@ -8,34 +11,44 @@
             $okno1 = $_REQUEST ["one"];
             $vvod = $_REQUEST ["oper"];
             $okno2 = $_REQUEST ["two"];
+            $result = $_REQUEST ["otvet"];
             
             if ($vvod == "+"){
-                $otvet = $okno1 + $okno2;
+                $result = $okno1 + $okno2;
             }
             if ($vvod == "-"){
-                $otvet = $okno1 - $okno2;
+                $result = $okno1 - $okno2;
             }
             if ($vvod == "*"){
-                $otvet = $okno1 * $okno2;
+                $result = $okno1 * $okno2;
             }
             if ($vvod == "/"){
                 if ($okno2 <> 0){
-                    $otvet = $okno1 / $okno2;
+                    $result = $okno1 / $okno2;
                 }
                 else {
                     $blok = "На ноль делить нельзя, введите другое число";
                 }
             }
+
+            mysqli_query($connecti, "INSERT INTO baza_kalcul(one_data, operetion, two_data, otvet) VALUES ('".$_REQUEST["one"] . $_REQUEST ["oper"] . $_REQUEST["two"] . $_REQUEST ["otvet"]."')");
+
         }
-    
         else {
             $error = "Поля пустые, заполните их и повторите операцию";
         }
-        
     }
 
+    $query = mysqli_query($connecti, "SELECT * FROM baza_kalcul");
 
-    ?>
+    $baza_tabl = [];
+
+    while ($row = mysqli_fetch_assoc($query)){ //Извлечёт из ответа $query первую строку, кторая в ней находится
+        $baza_tabl[] = $row; // Добавить в конец массива $morze сгенерированную строку
+    }
+
+    
+?>
 
 <html>
     <head>
@@ -87,15 +100,26 @@
             </div>
         <?php } ?>
 
-        <?php if(isset($otvet)) { ?>
+        <?php if(isset($result)) { ?>
             <div>
                 <span>Ваш результат: </span>
                 <span>
-                    <?php echo $otvet; ?>
+                    <?php echo $result; ?>
                 </span>
             </div>
         <?php } ?>
+
+        <?php foreach ($baza_tabl as $user) {?>
+            <form>
+                <span>-> [</span><?php echo $user["id"];?><span>]</span> 
+                <?php echo $user["one_data" . "operetion" . "two_data" . "otvet"]; ?>
+                
+<!--                <input type = "hidden" value = "</?php echo $user["id"];?>" name ="user_id"/>
+                <input type = "submit" value = "Удалить" name = "delete"/> --> 
+            </form>
             
+        <?php } ?>
+           
 
     </body>
 </html>
