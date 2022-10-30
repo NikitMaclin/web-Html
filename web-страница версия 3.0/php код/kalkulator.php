@@ -11,7 +11,7 @@
             $okno1 = $_REQUEST ["one"];
             $vvod = $_REQUEST ["oper"];
             $okno2 = $_REQUEST ["two"];
-            $result = $_REQUEST ["otvet"];
+ //           $result = $_REQUEST ["otvet"];
             
             if ($vvod == "+"){
                 $result = $okno1 + $okno2;
@@ -30,16 +30,15 @@
                     $blok = "На ноль делить нельзя, введите другое число";
                 }
             }
-
-            mysqli_query($connecti, "INSERT INTO baza_kalcul(one_data, operetion, two_data, otvet) VALUES ('".$_REQUEST["one"] . $_REQUEST ["oper"] . $_REQUEST["two"] . $_REQUEST ["otvet"]."')");
-
+            mysqli_query($connecti, "INSERT INTO baza_kalcul (one_data, operetion, two_data, otvet) VALUES ('" . $_REQUEST["one"] . "', '" . $_REQUEST ["oper"] . "', '". $_REQUEST["two"] . "', '". $result ."')");
         }
         else {
             $error = "Поля пустые, заполните их и повторите операцию";
         }
     }
 
-    $query = mysqli_query($connecti, "SELECT * FROM baza_kalcul");
+    $query = mysqli_query($connecti, "SELECT * FROM baza_kalcul WHERE id ORDER BY id DESC LIMIT 7");
+    
 
     $baza_tabl = [];
 
@@ -112,10 +111,13 @@
         <?php foreach ($baza_tabl as $user) {?>
             <form>
                 <span>-> [</span><?php echo $user["id"];?><span>]</span> 
-                <?php echo $user["one_data" . "operetion" . "two_data" . "otvet"]; ?>
+                <?php echo $user["one_data"]; ?>
+                <?php echo $user["operetion"]; ?>
+                <?php echo $user["two_data"]; ?> <span> = </span>
+                <?php echo $user["otvet"]; ?>
                 
-<!--                <input type = "hidden" value = "</?php echo $user["id"];?>" name ="user_id"/>
-                <input type = "submit" value = "Удалить" name = "delete"/> --> 
+                <input type = "hidden" value = "<?php echo $user["id"];?>" name ="user_id"/>
+                <input type = "submit" value = "Удалить" name = "delete"/> 
             </form>
             
         <?php } ?>
