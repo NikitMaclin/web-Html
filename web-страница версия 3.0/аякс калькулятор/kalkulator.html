@@ -12,28 +12,30 @@
                 let okno2 = document.querySelector("#two");
                 let name3 = okno2.value;
 
-                fetch ("kalkulator.php?one=" + name1 + "&oper=" + name2 + "&two=" + name3)
-                .then(responce => responce.json()) // Преобоазование полученного ответа в текстовую строку
+                fetch ("kalkulator.php?one=" + name1 + "&oper=" + encodeURIComponent(name2)
+ + "&two=" + name3)
+                .then(response => response.json())// Преобоазование полученного ответа в текстовую строку
                 .then(jsonObject => {
                     // Показываем ответ
-                    let result1 = document.querySelector(".resultg");
-                    result1.innerHTML = "Результат: " + jsonObject.blok;
-
                     let result2 = document.querySelector(".error");
-                    result2.innerHTML = "Результат: " + jsonObject.error;
+                    result2.innerHTML = jsonObject.error;
 
-                    let resultField = document.querySelector(".blok");
-                    resultField.innerHTML = "Результат: " + jsonObject.result;
+                    let resultFi = document.querySelector(".blok");
+                    resultFi.innerHTML = jsonObject.blok;
+
+                    let resultpost = document.querySelector(".resultpost");
+                    resultpost.innerHTML = jsonObject.resultpost;
 
                     let i;
                     let s = "";
 
                     for (i = 0; i < jsonObject.bazatabl.length; i++) {
-                        s = s + jsonObject.bazatabl[i].otvet + "<===>";
+                        s = s + jsonObject.bazatabl[i].otvet + ";";
                     }
                     resultField = document.querySelector(".resultg");
-                    resultField.innerHTML = s;
-                });
+                    resultField.innerHTML = "Последние 7 результатов: " + s;
+
+                })
 
             }
         </script>
@@ -65,9 +67,10 @@
                 <button onclick="rash();">Вычислить</button>
             </div>
 
-            <div class="resultg"></div>
             <div class="error"></div>
             <div class="blok"></div>
+            <div class = "resultpost"></div>
+            <div class="resultg"></div>
         </div>
     
     </body>
