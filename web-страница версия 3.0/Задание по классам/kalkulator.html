@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset = "UTF-8"/>
+        <script>
+            function rash(){
+                let okno1 = document.querySelector("#one");
+                let name1 = okno1.value;
+
+                let oper = document.querySelector("#oper");
+                let name2 = oper.value;
+
+                let okno2 = document.querySelector("#two");
+                let name3 = okno2.value;
+
+                fetch ("kalkulator.php?one=" + name1 + "&oper=" + encodeURIComponent(name2)
+ + "&two=" + name3)
+                .then(response => response.json())// Преобоазование полученного ответа в текстовую строку
+                .then(jsonObject => {
+                    // Показываем ответ
+                    let result2 = document.querySelector(".error");
+                    result2.innerHTML = jsonObject.error;
+
+                    let resultpost = document.querySelector(".resultpost");
+                    resultpost.innerHTML = jsonObject.resultpost;
+
+                    let i;
+                    let s = "";
+
+                    for (i = 0; i < jsonObject.bazatabl.length; i++) {
+                        s = s + jsonObject.bazatabl[i].otvet + ";";
+                    }
+                    resultField = document.querySelector(".resultg");
+                    resultField.innerHTML = "Последние 7 результатов: " + s;
+
+                })
+
+            }
+        </script>
+    </head>
+    <body>
+
+<!-- Калькулятор -->
+
+        <div> 
+            <div>Калькулятор</div>
+            <div>Введите первое число:</div>
+                <!--<input type="number" name = "one" id="one1"/>-->
+                <input type="number"  id="one"/>
+            <div>Выберите операцию:
+                <div>
+                    <select id="oper" style="padding-inline-end: 522px; padding-top: 15px;">
+                        <option>+</option>
+                        <option>-</option>
+                        <option>*</option>
+                        <option>/</option>
+                    </select>
+                </div>
+            </div>
+            <div>Введите второе число:</div>
+                <input type="number" id="two"/>
+            
+            <div>
+                <button onclick="rash();">Вычислить</button>
+            </div>
+
+            <div class="error"></div>
+            <div class = "resultpost"></div>
+            <div class="resultg"></div>
+        </div>
+    
+    </body>
+</html>
