@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Калькулятор</title>
+        <meta charset="UTF-8" />
+
+        <script>
+          function show(){
+            let element_input1 = document.querySelector(".one");
+            let data1 = element_input1.value;
+
+            let element_input = document.querySelector(".deis");
+            let data_deis = element_input.vaule;
+
+            let element_input2 = document.querySelector(".two");
+            let data2 = element_input2.value;
+
+            let element_result = document.querySelector(".result");
+
+            if (data1 == "" || data2 == ""){ 
+                    element_result.innerHTML = "Поля данных пустые - введите в них числа для расчёта!";
+                }
+
+            if (data1.trim() && data_deis.trim() && data2.trim()) {
+                if (data_deis == "+"){
+                    let resultat = Number(data1) + Number(data2);
+                    element_result.innerHTML = "Ваш результат:" + resultat;
+                }
+                else if (data_deis == "-"){
+                    let resultat = Number(data1) - Number(data2);
+                    element_result.innerHTML = "Ваш результат:" + resultat;
+                }
+                else if (data_deis == "*"){
+                    let resultat = Number(data1) * Number(data2);
+                    element_result.innerHTML = "Ваш результат:" + resultat;
+
+                }
+                else if (data_deis == "/" && data2 !=0){
+                    let resultat = Number(data1) / Number(data2);
+                    element_result.innerHTML = "Ваш результат:" + resultat;
+                }
+                else if (data1 && data_deis == "/" && data2 == 0){
+                    element_result.innerHTML = "На ноль делить нельзя - введите заново!";
+                }                
+            }
+          }
+        </script>
+        <script>
+            
+            function funkal() {
+                //Калькулятор
+                let kalkulDiv = document.createElement("div");
+                document.body.append(kalkulDiv);
+                let result2DivText = document.createTextNode("Калькулятор");
+                kalkulDiv.append(result2DivText);
+                //поле ввода первое
+                let fist_number = document.createElement("div");
+                document.body.append(fist_number);
+                let fist_number_Text = document.createTextNode("Введите первое число:");
+                fist_number.append(fist_number_Text);
+
+                let input1div = document.createElement("div");
+                document.body.append(input1div);
+
+                let input_okno1 = document.createElement("input");
+                input_okno1.classList.add("one");
+                input_okno1.name = "input_okno1";
+                input1div.append(input_okno1);
+                input_okno1.type = "number";
+
+                // Здесь должен быть выпадающий список 
+                let operet = document.createElement("div");
+                document.body.append(operet);
+                let Text_operet = document.createTextNode("Выберете операцию:");
+                operet.append(Text_operet);
+
+                let oper_sel = document.createElement("select");
+                oper_sel.classList.add("deis");
+                document.body.append(oper_sel);
+                oper_sel.options[1] = new Option("+");
+                oper_sel.options[2] = new Option("-");
+                oper_sel.options[3] = new Option("*");
+                oper_sel.options[4] = new Option("/");
+                //oper_sel.classList.add("deistvie");
+
+                //поле ввода второе
+                let second_number = document.createElement("div");
+                document.body.append(second_number);
+                let second_number_Text = document.createTextNode("Введите воторое число:");
+                second_number.append(second_number_Text);
+
+                let input2div = document.createElement("div");
+                document.body.append(input2div);
+
+                let input_okno2 = document.createElement("input");
+                input_okno2.classList.add("two");
+                input_okno2.name = "input_okno2";
+                input2div.append(input_okno2);
+                input_okno2.type = "number";
+
+                //вывод результата
+                let resulting = document.createElement("div");
+                document.body.append(resulting);
+                resulting.classList.add("result");
+                let Text_resulting = document.createTextNode("Ваш результат:");
+                resulting.append(Text_resulting);
+
+                //кнопка
+                let cnopik = document.createElement("button");
+                document.body.append(cnopik);
+                cnopik.addEventListener("click", show);
+                let Text_cn = document.createTextNode("Вычислить");
+                cnopik.append(Text_cn);
+            }
+            document.addEventListener("DOMContentLoaded", funkal);
+        </script>
+        
+    </head>
+
+    <body>
+
+    </body> 
+
+</html>
