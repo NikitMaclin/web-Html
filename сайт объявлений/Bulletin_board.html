@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Объявления.ru</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+
+        <script>
+            let AdsBoard = {};
+        </script>
+
+        <script src="header.js"></script>
+        <script src="page.Login.js"></script>
+        <script src="page.Register.js"></script>
+        <script src="page.Home.js" ></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                AdsBoard.Header.draw();
+                AdsBoard.PageLogin.draw();
+                AdsBoard.PageRegister.draw();
+                AdsBoard.homePage.draw();
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header"></div>
+        <div class="content"></div>
+        
+    </body>
+</html>

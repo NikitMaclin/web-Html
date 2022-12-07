@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #0EA5E9;
+
+    color: white;
+}
+
+/*Текстовка*/
+.formName {
+    color: #0EA5E9;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 300px;
+
+}
+.formReg {
+    color: #0EA5E9;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 195px;
+}
+.Podpis {
+    color: #0EA5E9;
+    margin: auto;
+    margin-top: 4px;
+
+    width: 400px;
+    height: 19px;
+    font-size: 16px;
+    
+    font-family: 'Inter';
+    font-style: italic;
+}
+
+/*Поля ввода*/
+.emailinput {
+    display: block;
+    margin: auto;
+    margin-top: 47px;
+    width: 400px;
+    height: 48px;
+
+    border: 1px solid #0EA5E9;
+}
+.paroleinput {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+
+    width: 400px;
+    height: 48px;
+
+    border: 1px solid #0EA5E9;
+}
+
+/*Кнопка*/
+.Button {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+
+    width: 200px;
+    height: 36px;
+
+    color: white;
+    background: #0EA5E9;
+    border: 1px solid #0EA5E9;
+    border-radius: 5px;
+}
+.ButtonReg {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 336px;
+
+    width: 200px;
+    height: 36px;
+
+    color: white;
+    background: #0EA5E9;
+    border: 1px solid #0EA5E9;
+    border-radius: 5px;
+}
