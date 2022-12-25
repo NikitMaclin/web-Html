@@ -89,3 +89,65 @@ body {
     border: 1px solid #0EA5E9;
     border-radius: 5px;
 }
+
+/* Сама страница объявлений, адаптив вёрстка */
+.fon {
+    border: 1px solid #0EA5E9;
+}
+.photo {
+    margin: auto;
+    margin-top: 40px;
+    width: 150px;
+    height: 150px;
+}
+.phone {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    color: #FFFFFF;
+    background: #0EA5E9;
+}
+.textov {
+    margin: auto;
+    margin-top: 40px;
+    width: 400px;
+    height: 100px;
+    overflow: auto;
+}
+.coin {
+    margin: auto;
+    margin-top: 5px;
+    width: 400px;
+    height: auto;
+}
+.imya {
+    margin: auto;
+    margin-top: 10px;
+    width: 400px;
+    height: auto;
+}
+
+@media (min-width: 650px) {
+    .oknoOsnova {
+        display: flex;
+        border: 1px solid #0EA5E9;
+    }
+    .fon2 {
+        width: 20%;
+    }
+    .fon3 {
+        width: 80%;
+    }
+    .fon4 {
+        margin-left: 30px;
+    }
+    .coinAV {
+        margin-top: 40px;
+    }
+    .imyaAV {
+        margin-top: 15px;
+        width: auto;
+    }
+}
