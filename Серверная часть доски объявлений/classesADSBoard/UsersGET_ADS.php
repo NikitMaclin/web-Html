@@ -9,7 +9,7 @@
                 echo json_encode ($us);
             }
             public function GetUsers () {
-                $query = DataBase::query ("SELECT * FROM ads");
+                $query = DataBase::query ("SELECT * FROM ads LEFT JOIN user_reg ON ads.userid = user_reg.id");
 
                 $bazatabl = [];
                 
